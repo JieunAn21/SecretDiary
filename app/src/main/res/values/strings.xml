@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SecretDiary</string>
+    <string name="title">Secret Diary</string>
+    <string name="open">OPEN</string>
 </resources>

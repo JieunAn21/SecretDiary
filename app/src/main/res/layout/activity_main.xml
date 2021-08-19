@@ -4,15 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/pink"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/bm_hanna"
+        android:text="@string/title"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/layoutPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/banana"
+        android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnOpen"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/gray"
+            android:fontFamily="@font/bm_hanna"
+            android:text="@string/open"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/numberPicker1"
+            app:layout_constraintEnd_toStartOf="@id/numberPicker1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/numberPicker1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/btnOpen"
+            app:layout_constraintStart_toStartOf="@id/btnOpen"
+            app:layout_constraintTop_toBottomOf="@id/btnOpen" />
+
+        <NumberPicker
+            android:id="@+id/numberPicker1"
+            android:layout_width="30dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="10dp"
+            android:background="@color/gray"
+            app:layout_constraintStart_toEndOf="@id/btnOpen"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <NumberPicker
+            android:id="@+id/numberPicker2"
+            android:layout_width="30dp"
+            android:layout_height="120dp"
+            android:background="@color/gray"
+            app:layout_constraintStart_toEndOf="@id/numberPicker1"
+            app:layout_constraintTop_toTopOf="@id/numberPicker1" />
+
+        <NumberPicker
+            android:id="@+id/numberPicker3"
+            android:layout_width="30dp"
+            android:layout_height="120dp"
+            android:background="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/numberPicker2"
+            app:layout_constraintTop_toTopOf="@id/numberPicker1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
