@@ -46,6 +46,7 @@
             app:layout_constraintTop_toTopOf="@id/numberPicker1" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnReset"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_marginTop="10dp"
