@@ -1,5 +1,6 @@
 package com.anjinny.secretdiary
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.NumberPicker
@@ -13,24 +14,24 @@ class MainActivity : AppCompatActivity() {
 
     private val numberPicker1: NumberPicker by lazy {
         findViewById<NumberPicker>(R.id.numberPicker1)
-                .apply {
-                    minValue = 0
-                    maxValue = 9
-                }
+            .apply {
+                minValue = 0
+                maxValue = 9
+            }
     }
     private val numberPicker2: NumberPicker by lazy {
         findViewById<NumberPicker>(R.id.numberPicker2)
-                .apply {
-                    minValue = 0
-                    maxValue = 9
-                }
+            .apply {
+                minValue = 0
+                maxValue = 9
+            }
     }
     private val numberPicker3: NumberPicker by lazy {
         findViewById<NumberPicker>(R.id.numberPicker3)
-                .apply {
-                    minValue = 0
-                    maxValue = 9
-                }
+            .apply {
+                minValue = 0
+                maxValue = 9
+            }
     }
     private val btnOpen: AppCompatButton by lazy {
         findViewById(R.id.btnOpen)
@@ -61,7 +62,7 @@ class MainActivity : AppCompatActivity() {
 
             if (passwordPreference.getString("password", "000").equals(userPassword)) {
                 //성공
-                //startActivity()
+                startActivity(Intent(this, DiaryActivity::class.java))
             } else {
                 showFailAlertDialog()
             }
@@ -94,10 +95,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun showFailAlertDialog() {
         AlertDialog.Builder(this)
-                .setTitle("실패!!")
-                .setMessage("비밀번호가 맞지 않습니다.")
-                .setPositiveButton("확인") { _, _ -> }
-                .create()
-                .show()
+            .setTitle("실패!!")
+            .setMessage("비밀번호가 맞지 않습니다.")
+            .setPositiveButton("확인") { _, _ -> }
+            .create()
+            .show()
     }
 }
